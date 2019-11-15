@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cliente</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+</head>
+<body>
+    <div>
+        <nav class="nnavbar navbar-expand-lg navbar-light bg-light">
+            
+            <a class="navbar-brand" href="//127.0.0.1:3333/cliente">
+                <img src="https://image.flaticon.com/icons/svg/265/265674.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Clientes
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/vehiculo">
+                <img src="https://image.flaticon.com/icons/svg/741/741407.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                vehiculos
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/mecanico">
+                <img src="https://image.flaticon.com/icons/svg/81/81836.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Mecanicos
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/factura">
+                <img src="https://image.flaticon.com/icons/svg/1611/1611154.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Facturas
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/hoja">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696695.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                HojaDePartes
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/repuesto">
+                <img src="https://image.flaticon.com/icons/svg/148/148912.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Repuestos
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/registro">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696695.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Registro
+            </a>
+            
+        </nav>
+    </div>
+    <div class="container">
+        <div>
+            <h1> Lista de mecanicos </h1>
+            <a href="/mecanico/crear"><button type="button" class="btn btn-primary ">Crear</button></a>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">idMecanico</th>
+                        <th scope="col">nombre</th>
+                        <th scope="col">direccion</th>
+                        <th scope="col">telefono</th>
+                        <th scope="col">costo*hora</th>
+                        <th scope="col">categoria</th>
+                        <th scope="col">Option 1</th>
+                        <th scope="col">Option 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @each(mecanico in mecanicos)
+                    <tr>
+                        <th>{{mecanico.id}}</th>
+                        <th>{{mecanico.idMecanico}}</th>
+                        <th>{{mecanico.nombre}}</th>
+                        <th>{{mecanico.direccion}}</th>
+                        <th>{{mecanico.telefono}}</th>
+                        <th>{{mecanico.costoxhora}}</th>
+                        <th>{{mecanico.categoria}}</th>
+                        <th><a href="/mecanico/editar/{{mecanico.id}}/"><button type="button" class="btn btn-warning">Editar</button></a></th>
+                        <th><a href="/mecanico/eliminar/{{mecanico.id}}/"><button type="button" class="btn btn-danger">Eliminar</button></a></th>
+                    </tr>
+                    @endeach
+                </tbody>
+            </table>
+        </div>
+        
+
+    </div>
+</body>
+
+
